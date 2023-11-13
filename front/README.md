@@ -1,4 +1,4 @@
-# siem-webapp
+# front
 
 ## Project setup
 ```

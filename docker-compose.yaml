@@ -210,3 +210,31 @@ services:
       - ELASTIC_USER=elastic
       - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
       - ELASTIC_HOSTS=https://es01:9200
+
+---
+version: '3.8'
+services:  
+  backend:
+      container_name: back
+      build: 
+        context: api
+      environment:
+        - API_PORT=8088
+      ports:
+        - "8088:8088"
+      networks:
+        - application
+  frontend:
+    depends_on:
+      - backend
+    container_name: front
+    build: 
+      context: front
+    ports:
+      - "8080:8080"
+    networks:
+      - application
+
+networks:
+  application:
+    name: default-app-network
