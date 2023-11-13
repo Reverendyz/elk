@@ -2,7 +2,7 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <div v-for="item in list">
-      <Card :msg=item />
+      <Card :msg=item.name :desc=item.desc />
     </div>
   </div>
 </template>
@@ -19,7 +19,11 @@ export default defineComponent({
   data() {
     return {
       count:1,
-      list: ["l", "a", "b", "u", "y"]
+      list: [{
+        id: 1,
+        name: "Docker",
+        desc: "Containerize all environment"
+      }]
     }
   },
 });

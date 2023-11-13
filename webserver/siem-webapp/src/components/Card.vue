@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <p>{{ desc }}</p>
   </div>
 </template>
 
@@ -10,7 +11,8 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'Card',
   props: {
-    msg: String
+    msg: String,
+    desc: String
   },
 });
 </script>
@@ -30,5 +32,11 @@ li {
 }
 a {
   color: #42b983;
+}
+.hello {
+  background-color: darkgrey;
+  width: 20%;
+  margin: 0 auto;
+  color: white;
 }
 </style>
