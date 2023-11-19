@@ -1,22 +1,4 @@
 version: "3.8"
-
-volumes:
-  certs:
-    driver: local
-  esdata01:
-    driver: local
-  kibanadata:
-    driver: local
-  logstashdata01:
-    driver: local
-
-
-networks:
-  default:
-    name: elastic
-    external: false
-
-
 services:
   setup:
     image: docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
@@ -165,3 +147,18 @@ services:
       - ELASTIC_USER=elastic
       - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
       - ELASTIC_HOSTS=https://es01:9200
+
+volumes:
+  certs:
+    driver: local
+  esdata01:
+    driver: local
+  kibanadata:
+    driver: local
+  logstashdata01:
+    driver: local
+
+networks:
+  default:
+    name: elastic
+    external: false
