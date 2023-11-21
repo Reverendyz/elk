@@ -1,11 +1,6 @@
 version: 2
 updates:
-  - package-ecosystem: npm
-    directory: "front/"
+  - package-ecosystem: docker
+    directory: "/"
     schedule:
-      interval: "daily"
-
-  - package-ecosystem: gomod
-    directory: "api/"
-    schedule:
-      interval: "daily"
+      interval: "weekly"
