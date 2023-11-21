@@ -137,6 +137,8 @@ services:
     labels:
       co.elastic.logs/module: logstash
     user: root
+    ports:
+      - 5044:5044
     volumes:
       - certs:/usr/share/logstash/certs
       - logstashdata01:/usr/share/logstash/data
